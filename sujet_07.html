@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Soutenance</title>
+    <link href="./style.css" rel="stylesheet" />
+    <script type="text/javascript" src="./tools.js"></script>
+</head>
+<body>
+<!-- rules and instructions -->
+<div class="card instructions">
+    <p class="h6 font-weight-bold text-center">Consignes générales</p>
+    <p>Toutes les consignes et recommandations vues en cours devront être respectées, notamment :</p>
+    <ul>
+        <li>du code structuré et correctement indenté,</li>
+        <li>du code découpé ; ne pas hésiter à faire plusieurs fonctions (même des petites),</li>
+        <li>du code DRY (Dont' Repeat Yourself),</li>
+        <li>du code <strong>documenté</strong></li>
+        <li>du code testé et avec un minimum de robustesse</li>
+    </ul>
+    <p>Eléments de départ fournis quel que soit le projet :</p>
+    <ul>
+        <li>ce fichier (sujet_xx.html) qui est un conteneur de votre projet</li>
+        <li>un fichier de style CSS (style.css) déjà chargé via le header du document html</li>
+        <li>un fichier Javascript (tools.js), déjà chargé via le header du document html, contenant divers outils :
+            <ul>
+                <li>une fonction d'affichage formatté d'un tableau (Array) à la fin du document html courant,</li>
+                <li>une fonction d'affichage formatté d'un résultat à la fin du document html courant,</li>
+                <li>une fonction de génération aléatoire d'un nombre entier compris entre 2 valeurs,</li>
+                <li>une fonction de génération d'une série aléatoire de nombres entiers rangés dans un tableau de type Array,</li>
+            </ul>
+            N'hésitez pas à faire vos curieux sur le code disponible dans le fichier <em>tools.js</em> et à utiliser (c'est à dire appeler) les fonctions
+            proposées selon votre sujet et/ou vos besoins. Vous pouvez aussi vous en inspirer...
+        </li>
+    </ul>
+    <p>La restitution de votre travail se fera par les moyens de votre choix (zip, dépôt sur votre github, ...) au plus tard 
+        le matin du jour de la soutenance.<br>
+        Elle devra contenir tous les éléments pour faire tourner votre code : à minima, les fichiers tools.js, 
+        style.css et, bien évidemment, le fichier sujet_xx.html que vous aurez modifié. Ajoutez tout autre fichier que vous jugeriez nécessaire
+        pour restituer votre travail.
+    </p>
+    <p>En principe, seul l'ajout de code JavaScript entre les balises &lt;script&gt;...&lt;script&gt;
+        est nécessaire mais sentez-vous libre de modifier n'importe quelle autre partie des 3 fichiers proposés (.html, .js, .css) 
+        sous réserve d'en avoir une justification.
+    </p>
+    <p>Bien entendu, durant la semaine précédant la soutenance, <span class="text-success">je reste disponible pour répondre à toutes les questions</span> 
+        pour lever les doutes, les ambiguïtés, les incompréhensions du sujet, ...<br>
+        <span class="text-danger">Ne restez pas totalement bloqué</span> au risque de perdre du temps ou, pire, de supputer 
+        et de vous fourvoyer... 
+    </p>
+</div>
+
+<!-- subject -->
+<div class="card subject">
+    <p class="h6 font-weight-bold text-center">Sujet #07 - Ranger dans l'ordre croisant</p>
+    <ol>
+         <li>Générer un tableau de <em>n</em> nombres entiers relatifs aléatoires (par exemple 20) entre 2 bornes 
+            (par exemple -100 et 100) en utilisant la fonction "randomArrayOfIntFromInterval" mise à votre 
+            disposition dans le fichier <em>tools.js</em>.</li>
+        <li>Construire un nouveau tableau en y rangeant les nombres du premier tableau de manière croissante 
+            <strong>sans utiliser les fonctions "avancées" de Javascript</strong> (un peu de lecture préliminaire sur la 
+                technique du <strong>"tri à bulles"</strong> - ou autre algorithme de tri - est conseillée !).</li>
+        <li>Restituer le tableau ordonné à l'utilisateur par le moyen de votre choix (console, zone de résultat, ...), mais 
+            la fonction "displayArray" donnée dans <em>tools.js</em> devra être privilégiée.</li>
+    </ol>
+</div>
+
+<!-- html wrapper -->
+<div class="card input">
+    <div class="formulaire">
+        <input type="number" id="longueur" placeholder="Longueur du tableau">
+        <input type="number" id="borne-inf" placeholder="Borne inférieure">
+        <input type="number" id="borne-sup" placeholder="Borne supérieure">
+        <button type="button" class="btn btn-primary" onclick="generateAndOrder()">
+            Générer et ordonner
+        </button>
+    </div>
+</div>
+
+<!-- html display area wrapper -->
+<div class="card result" id="result"></div>
+
+<script type="text/javascript">
+
+    // YOUR CODE HERE
+    // ...
+    
+</script>
+
+</body>
+</html>

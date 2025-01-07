@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Soutenance</title>
+    <link href="./style.css" rel="stylesheet" />
+    <script type="text/javascript" src="./tools.js"></script>
+</head>
+<body>
+<!-- rules and instructions -->
+<div class="card instructions">
+    <p class="h6 font-weight-bold text-center">Consignes générales</p>
+    <p>Toutes les consignes et recommandations vues en cours devront être respectées, notamment :</p>
+    <ul>
+        <li>du code structuré et correctement indenté,</li>
+        <li>du code découpé ; ne pas hésiter à faire plusieurs fonctions (même des petites),</li>
+        <li>du code DRY (Dont' Repeat Yourself),</li>
+        <li>du code <strong>documenté</strong></li>
+        <li>du code testé et avec un minimum de robustesse</li>
+    </ul>
+    <p>Eléments de départ fournis quel que soit le projet :</p>
+    <ul>
+        <li>ce fichier (sujet_xx.html) qui est un conteneur de votre projet</li>
+        <li>un fichier de style CSS (style.css) déjà chargé via le header du document html</li>
+        <li>un fichier Javascript (tools.js), déjà chargé via le header du document html, contenant divers outils :
+            <ul>
+                <li>une fonction d'affichage formatté d'un tableau (Array) à la fin du document html courant,</li>
+                <li>une fonction d'affichage formatté d'un résultat à la fin du document html courant,</li>
+                <li>une fonction de génération aléatoire d'un nombre entier compris entre 2 valeurs,</li>
+                <li>une fonction de génération d'une série aléatoire de nombres entiers rangés dans un tableau de type Array,</li>
+            </ul>
+            N'hésitez pas à faire vos curieux sur le code disponible dans le fichier <em>tools.js</em> et à utiliser (c'est à dire appeler) les fonctions
+            proposées selon votre sujet et/ou vos besoins. Vous pouvez aussi vous en inspirer...
+        </li>
+    </ul>
+    <p>La restitution de votre travail se fera par les moyens de votre choix (zip, dépôt sur votre github, ...) au plus tard 
+        le matin du jour de la soutenance.<br>
+        Elle devra contenir tous les éléments pour faire tourner votre code : à minima, les fichiers tools.js, 
+        style.css et, bien évidemment, le fichier sujet_xx.html que vous aurez modifié. Ajoutez tout autre fichier que vous jugeriez nécessaire
+        pour restituer votre travail.
+    </p>
+    <p>En principe, seul l'ajout de code JavaScript entre les balises &lt;script&gt;...&lt;script&gt;
+        est nécessaire mais sentez-vous libre de modifier n'importe quelle autre partie des 3 fichiers proposés (.html, .js, .css) 
+        sous réserve d'en avoir une justification.
+    </p>
+    <p>Bien entendu, durant la semaine précédant la soutenance, <span class="text-success">je reste disponible pour répondre à toutes les questions</span> 
+        pour lever les doutes, les ambiguïtés, les incompréhensions du sujet, ...<br>
+        <span class="text-danger">Ne restez pas totalement bloqué</span> au risque de perdre du temps ou, pire, de supputer 
+        et de vous fourvoyer... 
+    </p>
+</div>
+
+<!-- subject -->
+<div class="card subject">
+    <p class="h6 font-weight-bold text-center">Sujet #02 - Le prof est un fantaisiste...</p>
+    <p>Le prof a eu la flemme de corriger les copies de l'épreuve de JavaScript et
+        il a attribué aléatoirement les notes aux élèves de la classe. La classe de JavaScript compte 25 élèves 
+        (pour éviter toute similitude trompeuse).<br>
+        La seule chose que le prof a décidée est l'amplitude des notes (un minimum et un maximum possibles).
+    </p>
+    <ol>
+        <li>En utilisant la fonction "randomArrayOfIntFromInterval" proposée dans le fichier <em>tools.js</em>,
+            construire un tableau de <em>25</em> notes comprises entre les valeurs extrèmes que le prof aura renseignées 
+            (minimum : nombre entre 0 et 20, maximum : nombre entre 0 et 20 avec, bien évidemment, minimum < maximum).<br>
+            A l'aide d'une des fonctions outils proposées, afficher le tableau obtenu.
+        </li>
+        <li>Dans la foulée de la génération des notes, rechercher le nombre d'élèves qui ont obtenu la moyenne ou plus.</li>
+        <li>Restituer le résultat à l'utilisateur par le moyen de votre choix (console, zone de résultat, ...), mais 
+            la fonction "displayOneResult" donnée dans <em>tools.js</em> devra être privilégiée.</li>
+    </ol>
+</div>
+
+<!-- html wrapper -->
+<div class="card input">
+    <div class="formulaire">
+        <input type="number" id="note-min" placeholder="Note minimale possible">
+        <input type="number" id="note-max" placeholder="Note maximale possible">
+        <button type="button" class="btn btn-primary" onclick="generateAndAnalyze()">
+            Générer les notes et analyser
+        </button>
+    </div>
+</div>
+
+<!-- html display area wrapper -->
+<div class="card result" id="result"></div>
+
+<script type="text/javascript">
+
+    // YOUR CODE HERE
+    // ...
+    
+</script>
+
+</body>
+</html>

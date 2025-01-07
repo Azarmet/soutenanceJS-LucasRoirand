@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Soutenance</title>
+    <link href="./style.css" rel="stylesheet" />
+    <script type="text/javascript" src="./tools.js"></script>
+</head>
+<body>
+<!-- rules and instructions -->
+<div class="card instructions">
+    <p class="h6 font-weight-bold text-center">Consignes générales</p>
+    <p>Toutes les consignes et recommandations vues en cours devront être respectées, notamment :</p>
+    <ul>
+        <li>du code structuré et correctement indenté,</li>
+        <li>du code découpé ; ne pas hésiter à faire plusieurs fonctions (même des petites),</li>
+        <li>du code DRY (Dont' Repeat Yourself),</li>
+        <li>du code <strong>documenté</strong></li>
+        <li>du code testé et avec un minimum de robustesse</li>
+    </ul>
+    <p>Eléments de départ fournis quel que soit le projet :</p>
+    <ul>
+        <li>ce fichier (sujet_xx.html) qui est un conteneur de votre projet</li>
+        <li>un fichier de style CSS (style.css) déjà chargé via le header du document html</li>
+        <li>un fichier Javascript (tools.js), déjà chargé via le header du document html, contenant divers outils :
+            <ul>
+                <li>une fonction d'affichage formatté d'un tableau (Array) à la fin du document html courant,</li>
+                <li>une fonction d'affichage formatté d'un résultat à la fin du document html courant,</li>
+                <li>une fonction de génération aléatoire d'un nombre entier compris entre 2 valeurs,</li>
+                <li>une fonction de génération d'une série aléatoire de nombres entiers rangés dans un tableau de type Array,</li>
+            </ul>
+            N'hésitez pas à faire vos curieux sur le code disponible dans le fichier <em>tools.js</em> et à utiliser (c'est à dire appeler) les fonctions
+            proposées selon votre sujet et/ou vos besoins. Vous pouvez aussi vous en inspirer...
+        </li>
+    </ul>
+    <p>La restitution de votre travail se fera par les moyens de votre choix (zip, dépôt sur votre github, ...) au plus tard 
+        le matin du jour de la soutenance.<br>
+        Elle devra contenir tous les éléments pour faire tourner votre code : à minima, les fichiers tools.js, 
+        style.css et, bien évidemment, le fichier sujet_xx.html que vous aurez modifié. Ajoutez tout autre fichier que vous jugeriez nécessaire
+        pour restituer votre travail.
+    </p>
+    <p>En principe, seul l'ajout de code JavaScript entre les balises &lt;script&gt;...&lt;script&gt;
+        est nécessaire mais sentez-vous libre de modifier n'importe quelle autre partie des 3 fichiers proposés (.html, .js, .css) 
+        sous réserve d'en avoir une justification.
+    </p>
+    <p>Bien entendu, durant la semaine précédant la soutenance, <span class="text-success">je reste disponible pour répondre à toutes les questions</span> 
+        pour lever les doutes, les ambiguïtés, les incompréhensions du sujet, ...<br>
+        <span class="text-danger">Ne restez pas totalement bloqué</span> au risque de perdre du temps ou, pire, de supputer 
+        et de vous fourvoyer... 
+    </p>
+</div>
+
+<!-- subject -->
+<div class="card subject">
+    <p class="h6 font-weight-bold text-center">Sujet #12 - Quelle belle courbe !</p>
+    <p><img src="./images/courbe-e12.jpg" style="float:right; width: 380px; margin: 0 10px;">Nous allons très sommairement étudier la fonction mathématique (ne pas confondre avec une fonction 
+        au sens informatique) <em>f</em> qui à <em>x</em> associe :
+        <math display="block">
+            f(x)=
+            <mfrac>
+                <mn>100</mn>
+                <mn>x</mn>
+            </mfrac>
+            <mo>+</mo>
+            <mfrac>
+                <mn>2x</mn>
+                <mn>3</mn>
+            </mfrac>
+            <mo>-</mo>
+            <mn>20</mn>
+        </math><br>
+    <p>L'étude se fera pour x &#8712; [1, 100].</p>
+    <p>Il faut proposer une méthode qui permet de ranger dans un tableau les valeurs de <em>f(x)</em> pour <em>x</em> allant de 
+        1 à 100 par pas de 1.</p>
+    <ol>
+        <li>Ecrire une fonction qui calcule <em>f(x)</em> pour une valeur quelconque de <em>x</em>.<br>
+            Bien faire attention au(x) paramètre(s), au retour et au nommage de cette fonction.</li>
+        <li>Ecrire la fonction principale "compute".<br>
+            Cette fonction range dans un tableau les valeurs successives calculées à l'aide de la fonction déclarée au point précédent 
+            pour des valeurs de <em>x</em> allant de 1 à 100.<br>
+            Il faut donc ranger f(1), f(2), ..., f(100) dans ce tableau.<br>
+            Restituer le résultat à l'utilisateur par le moyen de votre choix (console, zone de résultat, ...), mais 
+            la fonction "displayArray" donnée dans <em>tools.js</em> peut se révéler très utile... vraiment utile.</li>
+        <li><strong>Bonus</strong> : Si les choses ont été faites avec esthétique (c'est à dire en utilisant la fonction "displayArray" 
+            proposée), on remarque que le tableau est un peu long et compact.<br>
+            Proposer une solution qui présente les résultats à 
+            l'utilisateur sous forme de plusieurs tableaux ; par exemple un tableau pour x de 1 à 20, puis un autre tableau pour 
+            x de 21 à 40, ... etc.<br>
+            Toute autre proposition de restitution à l'utilisateur sera appréciée et étudiée avec bienveillance.
+        </li>
+    </ol>
+</div>
+
+<!-- html wrapper -->
+<div class="card input">
+    <div class="formulaire">
+        <button type="button" class="btn btn-primary" onclick="compute()">
+            Etude de 1 à 100
+        </button>
+    </div>
+</div>
+
+<!-- html display area wrapper -->
+<div class="card result" id="result"></div>
+
+<script type="text/javascript">
+
+    // YOUR CODE HERE
+    // ...
+    
+</script>
+
+</body>
+</html>
