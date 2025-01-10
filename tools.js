@@ -1,7 +1,3 @@
-function displayCard (element) {
-    element.style.display = "block";
-    element.scrollIntoView();
-}
 
 /*
  * Affiche le contenu d'un tableau de type Array à la fin courante du document html.
@@ -116,3 +112,78 @@ function displayTwoArrays(tab1, tab2) {
     out += '</table>\n';
     element.innerHTML = out;
 }
+
+function displayArrayAdvanced(tab) {
+    
+    let element = document.getElementById('result');
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+      }
+    const { myButton, textField } = bouton_tableau("result");
+
+    displayCard(element);
+    
+    let out = '<table class="display">\n<tr>\n';
+    tab.forEach ((item, index) => {
+        out += '<td class="border-blue">' + item + '</td>\n';
+    });
+    out += '</tr>\n</table>\n';
+    element.insertAdjacentHTML('beforeend', out);
+    
+    myButton.addEventListener('click', () => {
+        const elementsPerRow = parseInt(textField.value);
+
+       
+        if (isNaN(elementsPerRow) || elementsPerRow <= 0) {
+            alert('Veuillez entrer un nombre valide !');
+            return;
+        }
+
+        
+        const existingTable = element.querySelector('table');
+        if (existingTable) {
+            existingTable.remove();
+        }
+
+        
+        let out = '<table class="display">\n';
+        for (let i = 0; i < tab.length; i++) {
+            if (i % elementsPerRow === 0) {
+                out += '<tr>\n';
+            }
+
+            out += '<td class="border-blue">' + tab[i] + '</td>\n';
+
+            if (i === tab.length - 1) {
+                out += '</tr>\n';
+            }
+        }
+        out += '</table>\n';
+
+    
+        element.insertAdjacentHTML('beforeend', out);
+    });
+}
+
+function displayCard(element) {
+    element.style.display = "block";
+    element.scrollIntoView();
+}
+
+function bouton_tableau(element) {
+    
+    const out = document.getElementById(element);
+
+    const myButton = document.createElement('button');
+    myButton.textContent = 'Formater';
+    const textField = document.createElement('input');
+    textField.type = 'text';
+    textField.placeholder = 'Éléments par ligne';
+
+    out.appendChild(textField);
+    out.appendChild(myButton);
+    
+
+    return { myButton, textField };
+}
+
